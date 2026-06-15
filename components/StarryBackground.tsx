@@ -8,7 +8,7 @@ export default function StarryBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -20,6 +20,7 @@ export default function StarryBackground() {
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+
     };
 
     setCanvasSize();
@@ -43,7 +44,7 @@ export default function StarryBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
-      
+
       stars.forEach(star => {
         // Twinkle effect
         star.opacity += star.speed;
@@ -55,7 +56,7 @@ export default function StarryBackground() {
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(star.opacity)})`;
         ctx.fill();
-        
+
         // Very slow upward movement (parallax feel)
         star.y -= 0.15;
         if (star.y < 0) {
