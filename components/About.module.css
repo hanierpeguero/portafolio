@@ -1,0 +1,109 @@
+.aboutSection {
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.bioGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .bioGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bioCard {
+  padding: 2.5rem;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.iconWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.accentIcon {
+  color: var(--accent-color);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.schoolName {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.degree {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.year {
+  color: var(--accent-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.bioText {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillCard {
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.skillIcon {
+  color: var(--accent-color);
+  background: var(--bg-surface-solid);
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+}
+
+.skillName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.skillCategory {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
