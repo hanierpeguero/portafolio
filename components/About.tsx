@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Code2, Database, Terminal, Briefcase, Layers, FileCode2, Puzzle, Award } from "lucide-react";
+import { GraduationCap, Code2, Database, Terminal, Briefcase, Layers, FileCode2, Puzzle, Award, Smartphone } from "lucide-react";
 import styles from "./About.module.css";
 
 export default function About() {
   const skills = [
     { name: "C# & .NET Core", icon: <Terminal size={24} />, category: "Backend" },
     { name: "React & Next.js", icon: <Code2 size={24} />, category: "Frontend" },
+    { name: "React Native & Expo", icon: <Smartphone size={24} />, category: "Mobile" },
     { name: "SQL Server & EF Core", icon: <Database size={24} />, category: "Database" },
     { name: "Onion & Monolithic", icon: <Layers size={24} />, category: "Architecture" },
     { name: "Core Principles", icon: <Puzzle size={24} />, category: "SOLID, DRY, KISS" },
