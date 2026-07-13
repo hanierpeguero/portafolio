@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ChevronRight, Download, FileText } from "lucide-react";
+import { ChevronRight, Download, FileText, Github, Linkedin } from "lucide-react";
 import styles from "./Hero.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -71,8 +71,14 @@ export default function Hero() {
             <a href="#resume" className="btn btn-outline">
               <FileText size={18} /> {t.hero.viewResume}
             </a>
-            <a href="/Cv.pdf" target="_blank" download="Hanier_Peguero_CV.pdf" className={`btn btn-outline ${styles.downloadBtn}`}>
+            <a href="/Cv.pdf" target="_blank" download="Hanier_Peguero_CV.pdf" className={`btn btn-outline ${styles.downloadBtn}`} title="Download CV">
               <Download size={18} />
+            </a>
+            <a href="https://github.com/hanierpeguero" target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.downloadBtn}`} title="GitHub">
+              <Github size={18} />
+            </a>
+            <a href="https://www.linkedin.com/in/hanier-peguero-566b90306" target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.downloadBtn}`} title="LinkedIn">
+              <Linkedin size={18} />
             </a>
           </motion.div>
         </motion.div>
