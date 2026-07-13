@@ -16,6 +16,10 @@
   border-bottom: 1px solid var(--glass-border);
 }
 
+.hidden {
+  transform: translateY(-100%);
+}
+
 .navContainer {
   display: flex;
   align-items: center;
