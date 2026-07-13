@@ -101,11 +101,7 @@ export default function About() {
             </div>
 
             <div>
-              <h4 className={styles.schoolName}>
-                <a href="https://itla.edu.do/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
-                  Instituto Tecnológico de las Américas (ITLA)
-                </a>
-              </h4>
+              <h4 className={styles.schoolName}>Instituto Tecnológico de las Américas (ITLA)</h4>
               <p className={styles.degree}>Programación Junior en Python</p>
             </div>
           </motion.div>
