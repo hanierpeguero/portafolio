@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
   const { t } = useLanguage();
-  
+
   const skills = [
     { name: "C# & .NET Core", icon: <Terminal size={24} />, category: "Backend" },
     { name: "React & Next.js", icon: <Code2 size={24} />, category: "Frontend" },
@@ -21,9 +21,9 @@ export default function About() {
   return (
     <section id="about" className={`section ${styles.aboutSection}`}>
       <div className="container">
-        
+
         {/* ABOUT ME SECTION */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -35,7 +35,7 @@ export default function About() {
         </motion.div>
 
         <div className={styles.bioGrid}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -47,19 +47,19 @@ export default function About() {
             </div>
             <h3 className={styles.cardTitle}>{t.about.academicTitle}</h3>
             <h4 className={styles.schoolName}>
-              <a href="https://itla.edu.do/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
+              <a href="https://itla.edu.do/quienes-somos/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
                 {t.about.academicSchool}
               </a>
             </h4>
             <p className={styles.degree}>{t.about.academicDegree}</p>
             <p className={styles.year}>{t.about.academicYear}</p>
-            
+
             <p className={styles.bioText}>
               {t.about.academicDesc}
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -77,13 +77,13 @@ export default function About() {
             </h4>
             <p className={styles.degree}>{t.about.workDegree}</p>
             <p className={styles.year}>{t.about.workYear}</p>
-            
+
             <p className={styles.bioText}>
               {t.about.workDesc}
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -94,7 +94,7 @@ export default function About() {
               <Award size={32} className={styles.accentIcon} />
             </div>
             <h3 className={styles.cardTitle}>{t.about.certTitle}</h3>
-            
+
             <div style={{ marginBottom: "1.5rem" }}>
               <h4 className={styles.schoolName}>Cisco Networking Academy</h4>
               <p className={styles.degree}>CPA: Programming Essentials in C++</p>
@@ -108,7 +108,7 @@ export default function About() {
         </div>
 
         {/* SKILLS SECTION */}
-        <motion.div 
+        <motion.div
           id="skills"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export default function About() {
             </motion.div>
           ))}
         </div>
-        
+
       </div>
     </section>
   );
