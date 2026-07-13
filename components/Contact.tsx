@@ -2,11 +2,22 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 import styles from "./Contact.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.message) return;
+    
+    const subject = encodeURIComponent(`Contact from ${formData.name} (Portfolio)`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:hanierp80@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   return (
     <section id="contact" className={`section ${styles.contactSection}`}>
@@ -75,20 +86,20 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={`glass ${styles.contactFormContainer}`}
           >
-            <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.label}>{t.contact.name}</label>
-                <input type="text" id="name" className={styles.input} placeholder={t.contact.name} />
+                <input type="text" id="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className={styles.input} placeholder={t.contact.name} />
               </div>
               
               <div className={styles.formGroup}>
                 <label htmlFor="email" className={styles.label}>{t.contact.email}</label>
-                <input type="email" id="email" className={styles.input} placeholder={t.contact.email} />
+                <input type="email" id="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className={styles.input} placeholder={t.contact.email} />
               </div>
               
               <div className={styles.formGroup}>
                 <label htmlFor="message" className={styles.label}>{t.contact.message}</label>
-                <textarea id="message" rows={5} className={styles.textarea} placeholder={t.contact.message}></textarea>
+                <textarea id="message" required rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className={styles.textarea} placeholder={t.contact.message}></textarea>
               </div>
               
               <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
