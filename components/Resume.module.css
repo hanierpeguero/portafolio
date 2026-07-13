@@ -11,15 +11,22 @@
 }
 
 .pdfWrapper {
-  width: 100%;
-  max-width: 900px;
-  height: 80vh;
-  min-height: 600px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  border: 1px solid var(--glass-border);
-  background: var(--bg-surface);
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .pdfWrapper {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    min-height: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid var(--glass-border);
+    background: var(--bg-surface);
+  }
 }
 
 .pdfWrapper iframe {

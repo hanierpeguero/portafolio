@@ -22,8 +22,8 @@
 }
 
 .contactInfo {
-  padding: 3rem;
-  border-radius: 24px;
+  padding: 1.5rem;
+  border-radius: 20px;
 }
 
 .infoTitle {
@@ -80,8 +80,15 @@ a.itemValue:hover {
 }
 
 .contactFormContainer {
-  padding: 3rem;
-  border-radius: 24px;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
+@media (min-width: 992px) {
+  .contactInfo, .contactFormContainer {
+    padding: 3rem;
+    border-radius: 24px;
+  }
 }
 
 .contactForm {

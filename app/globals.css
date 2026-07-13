@@ -66,7 +66,14 @@ a {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 4rem 0;
+  scroll-margin-top: 5rem;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 6rem 0;
+  }
 }
 
 .section-title {
@@ -126,4 +133,14 @@ a {
   background: var(--bg-surface-hover);
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+.cursor-glow-effect {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .cursor-glow-effect {
+    display: block;
+  }
 }

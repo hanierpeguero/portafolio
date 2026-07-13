@@ -16,6 +16,7 @@ export default function CursorGlow() {
 
   return (
     <div
+      className="cursor-glow-effect"
       style={{
         position: "fixed",
         top: 0,

@@ -108,8 +108,8 @@
 
 .glowEffect {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 180px;
+  height: 180px;
   background: var(--accent-color);
   border-radius: 50%;
   filter: blur(80px);
@@ -126,8 +126,8 @@
 
 .minimalistShape {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
