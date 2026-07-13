@@ -8,6 +8,7 @@
   --text-primary: #f8fafc;
   --text-secondary: #a1a1aa;
   --accent-color: #be123c;
+  --accent-hover: #e11d48; /* Brighter red for hover states */
   --accent-glow: rgba(190, 18, 60, 0.4);
   --cursor-glow: rgba(190, 18, 60, 0.15);
   --accent-secondary: #9f1239;
@@ -118,7 +119,7 @@ a {
 }
 
 .btn-primary:hover {
-  background: var(--accent-secondary);
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 0 30px var(--accent-glow);
 }
