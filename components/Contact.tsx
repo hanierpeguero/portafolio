@@ -13,7 +13,10 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name || !formData.email || !formData.message) {
+      alert(language === 'es' ? 'Por favor completa todos los campos antes de enviar.' : 'Please fill out all fields before sending.');
+      return;
+    }
 
     setStatus("submitting");
 
@@ -38,10 +41,14 @@ export default function Contact() {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
+        console.error("Web3Forms Error:", result);
         setStatus("error");
+        alert(language === 'es' ? 'Hubo un error con el servidor de correos. Verifica tu Access Key.' : 'Email server error. Check your Access Key.');
       }
     } catch (error) {
+      console.error("Web3Forms Fetch Error:", error);
       setStatus("error");
+      alert(language === 'es' ? 'Hubo un error de red al intentar enviar el mensaje.' : 'There was a network error sending the message.');
     }
   };
 
