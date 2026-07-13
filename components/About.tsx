@@ -66,7 +66,11 @@ export default function About() {
               <Briefcase size={32} className={styles.accentIcon} />
             </div>
             <h3 className={styles.cardTitle}>{t.about.workTitle}</h3>
-            <h4 className={styles.schoolName}>{t.about.workSchool}</h4>
+            <h4 className={styles.schoolName}>
+              <a href="https://techveris.com.do/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                {t.about.workSchool}
+              </a>
+            </h4>
             <p className={styles.degree}>{t.about.workDegree}</p>
             <p className={styles.year}>{t.about.workYear}</p>
             
