@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import styles from "./Contact.module.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className={`section ${styles.contactSection}`}>
       <div className="container">
@@ -15,8 +18,8 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className={styles.sectionHeader}
         >
-          <span className="section-subtitle">Get In Touch</span>
-          <h2 className="section-title">Contact Me</h2>
+          <span className="section-subtitle">{t.contact.subtitle}</span>
+          <h2 className="section-title">{t.contact.title}</h2>
         </motion.div>
 
         <div className={styles.contactContent}>
@@ -27,10 +30,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className={`glass ${styles.contactInfo}`}
           >
-            <h3 className={styles.infoTitle}>Let's talk about your next project</h3>
+            <h3 className={styles.infoTitle}>{t.contact.infoTitle}</h3>
             <p className={styles.infoDesc}>
-              I'm currently available for freelance work and open to full-time opportunities.
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              {t.contact.infoDesc}
             </p>
 
             <div className={styles.contactDetails}>
@@ -39,7 +41,7 @@ export default function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className={styles.itemLabel}>Email</p>
+                  <p className={styles.itemLabel}>{t.contact.email}</p>
                   <a href="mailto:hanierp80@gmail.com" className={styles.itemValue}>hanierp80@gmail.com</a>
                 </div>
               </div>
@@ -59,8 +61,8 @@ export default function Contact() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className={styles.itemLabel}>Location</p>
-                  <p className={styles.itemValue}>Dominican Republic</p>
+                  <p className={styles.itemLabel}>{t.contact.location}</p>
+                  <p className={styles.itemValue}>{t.contact.country}</p>
                 </div>
               </div>
             </div>
@@ -75,22 +77,22 @@ export default function Contact() {
           >
             <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Name</label>
-                <input type="text" id="name" className={styles.input} placeholder="John Doe" />
+                <label htmlFor="name" className={styles.label}>{t.contact.name}</label>
+                <input type="text" id="name" className={styles.input} placeholder={t.contact.name} />
               </div>
               
               <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Email</label>
-                <input type="email" id="email" className={styles.input} placeholder="john@example.com" />
+                <label htmlFor="email" className={styles.label}>{t.contact.email}</label>
+                <input type="email" id="email" className={styles.input} placeholder={t.contact.email} />
               </div>
               
               <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.label}>Message</label>
-                <textarea id="message" rows={5} className={styles.textarea} placeholder="How can I help you?"></textarea>
+                <label htmlFor="message" className={styles.label}>{t.contact.message}</label>
+                <textarea id="message" rows={5} className={styles.textarea} placeholder={t.contact.message}></textarea>
               </div>
               
               <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                Send Message <Send size={18} />
+                {t.contact.send} <Send size={18} />
               </button>
             </form>
           </motion.div>

@@ -2,7 +2,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -17,24 +18,37 @@
   height: 50%;
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   z-index: -1;
-  filter: blur(60px);
+  filter: blur(80px);
 }
 
 .heroContainer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
+  text-align: center; /* Center on mobile */
 }
 
 @media (min-width: 992px) {
   .heroContainer {
     grid-template-columns: 1.2fr 0.8fr;
+    text-align: left;
+    gap: 4rem;
   }
 }
 
 .content {
-  max-width: 600px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .content {
+    max-width: 600px;
+    align-items: flex-start;
+  }
 }
 
 .greeting {
@@ -43,32 +57,45 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .description {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   max-width: 500px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .actions {
+    justify-content: flex-start;
+  }
+}
+
+.downloadBtn {
+  padding: 0.75rem; /* Icon only button padding */
+  border-radius: 50%; /* Circle */
 }
 
 .imageContainer {
@@ -81,8 +108,8 @@
 
 .glowEffect {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: var(--accent-color);
   border-radius: 50%;
   filter: blur(80px);
@@ -90,37 +117,83 @@
   z-index: 0;
 }
 
-.abstractShape {
+@media (min-width: 992px) {
+  .glowEffect {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.minimalistShape {
   position: relative;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--bg-surface-solid), rgba(30, 40, 60, 0.9));
-  border: 1px solid var(--glass-border);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  width: 250px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  animation: morph 8s ease-in-out infinite;
 }
 
-.shapeInner {
-  font-family: var(--font-heading);
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--accent-color);
-  text-shadow: 0 0 20px var(--accent-glow);
+@media (min-width: 992px) {
+  .minimalistShape {
+    width: 300px;
+    height: 300px;
+  }
 }
 
-@keyframes morph {
-  0% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+.ring1, .ring2, .ring3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+}
+
+.ring1 {
+  width: 100%;
+  height: 100%;
+  border-top-color: var(--accent-color);
+  border-left-color: transparent;
+  animation: spin 20s linear infinite;
+}
+
+.ring2 {
+  width: 75%;
+  height: 75%;
+  border-right-color: var(--text-secondary);
+  border-bottom-color: transparent;
+  animation: spin 15s linear infinite reverse;
+}
+
+.ring3 {
+  width: 50%;
+  height: 50%;
+  border-bottom-color: var(--accent-color);
+  border-left-color: transparent;
+  animation: spin 25s linear infinite;
+}
+
+.centerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
   }
   50% {
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-  }
-  100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: scale(1.5);
+    opacity: 1;
+    box-shadow: 0 0 25px var(--accent-color);
   }
 }

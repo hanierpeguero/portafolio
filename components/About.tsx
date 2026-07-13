@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Code2, Database, Terminal, Briefcase, Layers, FileCode2, Puzzle, Award, Smartphone } from "lucide-react";
 import styles from "./About.module.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+  
   const skills = [
     { name: "C# & .NET Core", icon: <Terminal size={24} />, category: "Backend" },
     { name: "React & Next.js", icon: <Code2 size={24} />, category: "Frontend" },
@@ -27,8 +30,8 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className={styles.sectionHeader}
         >
-          <span className="section-subtitle">Discover</span>
-          <h2 className="section-title">About Me</h2>
+          <span className="section-subtitle">{t.about.discover}</span>
+          <h2 className="section-title">{t.about.title}</h2>
         </motion.div>
 
         <div className={styles.bioGrid}>
@@ -42,13 +45,13 @@ export default function About() {
             <div className={styles.iconWrapper}>
               <GraduationCap size={32} className={styles.accentIcon} />
             </div>
-            <h3 className={styles.cardTitle}>Academic Background</h3>
-            <h4 className={styles.schoolName}>Instituto Tecnológico de las Américas</h4>
-            <p className={styles.degree}>Carrera en Tecnología / Desarrollo de Software</p>
-            <p className={styles.year}>2024 - Present</p>
+            <h3 className={styles.cardTitle}>{t.about.academicTitle}</h3>
+            <h4 className={styles.schoolName}>{t.about.academicSchool}</h4>
+            <p className={styles.degree}>{t.about.academicDegree}</p>
+            <p className={styles.year}>{t.about.academicYear}</p>
             
             <p className={styles.bioText}>
-              Technology student with a strong interest in software development. Hands-on experience developing web applications and APIs using .NET, C#, Next 16, and SQL Server. Focused on continuous learning, best practices, teamwork, and problem-solving.
+              {t.about.academicDesc}
             </p>
           </motion.div>
 
@@ -62,13 +65,13 @@ export default function About() {
             <div className={styles.iconWrapper}>
               <Briefcase size={32} className={styles.accentIcon} />
             </div>
-            <h3 className={styles.cardTitle}>Professional Experience</h3>
-            <h4 className={styles.schoolName}>Techveris</h4>
-            <p className={styles.degree}>Software Developer Intern</p>
-            <p className={styles.year}>Present</p>
+            <h3 className={styles.cardTitle}>{t.about.workTitle}</h3>
+            <h4 className={styles.schoolName}>{t.about.workSchool}</h4>
+            <p className={styles.degree}>{t.about.workDegree}</p>
+            <p className={styles.year}>{t.about.workYear}</p>
             
             <p className={styles.bioText}>
-              Developing TIXOLIGHT, a multi-tenant educational platform. Building robust RESTful APIs using .NET 8, C#, and Entity Framework Core. Implementing a modern, scalable frontend with Next.js 16 and TypeScript, focusing on intuitive user experiences and organized institutional processes.
+              {t.about.workDesc}
             </p>
           </motion.div>
 
@@ -82,7 +85,7 @@ export default function About() {
             <div className={styles.iconWrapper}>
               <Award size={32} className={styles.accentIcon} />
             </div>
-            <h3 className={styles.cardTitle}>Certifications</h3>
+            <h3 className={styles.cardTitle}>{t.about.certTitle}</h3>
             
             <div style={{ marginBottom: "1.5rem" }}>
               <h4 className={styles.schoolName}>Cisco Networking Academy</h4>
@@ -106,8 +109,8 @@ export default function About() {
           className={styles.sectionHeader}
           style={{ marginTop: "6rem", scrollMarginTop: "6rem" }}
         >
-          <span className="section-subtitle">Technical Arsenal</span>
-          <h2 className="section-title">My Skills</h2>
+          <span className="section-subtitle">{t.about.technicalArsenal}</span>
+          <h2 className="section-title">{t.about.mySkills}</h2>
         </motion.div>
 
         <div className={styles.skillsGrid}>

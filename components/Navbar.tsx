@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code, Mail } from "lucide-react";
+import { Menu, X, Mail, Globe } from "lucide-react";
 import styles from "./Navbar.module.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +19,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleLanguage = () => {
+    setLanguage(language === "es" ? "en" : "es");
+  };
+
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.resume, href: "#resume" },
+    { name: t.nav.contact, href: "#contact" },
   ];
 
   return (
@@ -41,6 +47,9 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.navActions}>
+          <button onClick={toggleLanguage} className="btn btn-outline" style={{ padding: "0.5rem", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }} aria-label="Toggle Language">
+            <Globe size={18} />
+          </button>
           <a href="mailto:hanierp80@gmail.com" className="btn btn-primary" style={{ padding: "0.5rem 1rem", fontSize: "0.875rem" }}>
             <Mail size={16} />
             Hire Me

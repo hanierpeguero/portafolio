@@ -1,74 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight, Download } from "lucide-react";
+import { ChevronRight, Download, FileText } from "lucide-react";
 import styles from "./Hero.module.css";
+import { useLanguage } from "@/context/LanguageContext";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
+  },
+};
+
+const shapeVariants = {
+  hidden: { opacity: 0, scale: 0.8, rotate: -15 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    rotate: 0,
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.5 } 
+  },
+};
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.heroSection}>
       <div className={`container ${styles.heroContainer}`}>
-        <div className={styles.content}>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.greeting}
-          >
-            Hello, I'm
+        <motion.div 
+          className={styles.content}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p variants={itemVariants} className={styles.greeting}>
+            {t.hero.greeting}
           </motion.p>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className={styles.title}
-          >
-            Hanier Peguero
+          <motion.h1 variants={itemVariants} className={styles.title}>
+            {t.hero.name}
           </motion.h1>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={styles.subtitle}
-          >
-            Software Developer
+          <motion.h2 variants={itemVariants} className={styles.subtitle}>
+            {t.hero.role}
           </motion.h2>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className={styles.description}
-          >
-            Software Developer focused on building scalable systems (Web, Mobile, and Backend). With solid engineering foundations and experience working with modern architectures. Looking to join a dynamic team where I can provide immediate value, audit and optimize solutions, and continue my professional growth.
+          <motion.p variants={itemVariants} className={styles.description}>
+            {t.hero.description}
           </motion.p>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className={styles.actions}
-          >
+          <motion.div variants={itemVariants} className={styles.actions}>
             <a href="#projects" className="btn btn-primary">
-              View My Work <ChevronRight size={18} />
+              {t.hero.viewWork} <ChevronRight size={18} />
             </a>
-            <a href="/Cv.pdf" target="_blank" download="Hanier_Peguero_CV.pdf" className="btn btn-outline">
-              <Download size={18} /> Resume
+            <a href="#resume" className="btn btn-outline">
+              <FileText size={18} /> {t.hero.viewResume}
+            </a>
+            <a href="/Cv.pdf" target="_blank" download="Hanier_Peguero_CV.pdf" className={`btn btn-outline ${styles.downloadBtn}`}>
+              <Download size={18} />
             </a>
           </motion.div>
-        </div>
+        </motion.div>
         
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
           className={styles.imageContainer}
+          variants={shapeVariants}
+          initial="hidden"
+          animate="visible"
         >
           <div className={styles.glowEffect}></div>
-          <div className={styles.abstractShape}>
-            <div className={styles.shapeInner}>&lt;hp/&gt;</div>
+          <div className={styles.minimalistShape}>
+            <div className={styles.ring1}></div>
+            <div className={styles.ring2}></div>
+            <div className={styles.ring3}></div>
+            <div className={styles.centerDot}></div>
           </div>
         </motion.div>
       </div>

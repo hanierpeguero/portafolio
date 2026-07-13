@@ -3,31 +3,21 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Code, Layers } from "lucide-react";
 import styles from "./Projects.module.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "School Web System",
-      tech: "Laravel + Filament",
-      description: "Academic and financial management for a school. Role management, payments, PDF reports, and delinquency control based on a SaaS architecture.",
-      tags: ["Laravel", "Filament", "SaaS", "Management"],
-      repo: "#",
-    },
-    {
-      title: "Artemis Banking",
-      tech: ".NET 9",
-      description: "Academic banking system designed for managing accounts, transactions, and business validations. Development focused on backend logic, layered architecture, and relational database persistence.",
-      tags: [".NET 9", "Backend", "Layered Architecture", "SQL"],
-      repo: "https://github.com/hanierpeguero/ArtemisBanking.git",
-    },
-    {
-      title: "eVote360",
-      tech: ".NET 9",
-      description: "Electronic voting platform developed as a technology project. Implementation of authentication, user management, and voting process control with a focus on security, data integrity, and scalability.",
-      tags: [".NET 9", "Security", "Authentication", "Scalability"],
-      repo: "https://github.com/hanierpeguero/eVote360.git",
-    }
+  const { t } = useLanguage();
+
+  const repos = [
+    "#",
+    "https://github.com/hanierpeguero/ArtemisBanking.git",
+    "https://github.com/hanierpeguero/eVote360.git"
   ];
+
+  const projects = t.projects.list.map((proj, i) => ({
+    ...proj,
+    repo: repos[i]
+  }));
 
   return (
     <section id="projects" className={`section ${styles.projectsSection}`}>
@@ -39,8 +29,8 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className={styles.sectionHeader}
         >
-          <span className="section-subtitle">Portfolio</span>
-          <h2 className="section-title">Featured Projects</h2>
+          <span className="section-subtitle">{t.projects.subtitle}</span>
+          <h2 className="section-title">{t.projects.title}</h2>
         </motion.div>
 
         <div className={styles.projectsGrid}>
