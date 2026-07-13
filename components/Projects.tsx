@@ -8,16 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Projects() {
   const { t } = useLanguage();
 
-  const repos = [
-    "#",
-    "https://github.com/hanierpeguero/ArtemisBanking.git",
-    "https://github.com/hanierpeguero/eVote360.git"
-  ];
-
-  const projects = t.projects.list.map((proj, i) => ({
-    ...proj,
-    repo: repos[i]
-  }));
+  const projects = t.projects.list;
 
   return (
     <section id="projects" className={`section ${styles.projectsSection}`}>
@@ -46,19 +37,25 @@ export default function Projects() {
               <div className={styles.cardHeader}>
                 <Layers size={32} className={styles.projectIcon} />
                 <div className={styles.projectLinks}>
-                  {project.repo !== "#" && (
+                  {project.repo && project.repo !== "" && (
                     <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Source Code">
                       <Code size={20} />
                     </a>
                   )}
-                  <a href="#" className={styles.iconLink} aria-label="Live Demo">
-                    <ExternalLink size={20} />
-                  </a>
+                  {project.demo && project.demo !== "" && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Live Demo">
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
               
               <h3 className={styles.projectTitle}>
-                {project.repo !== "#" ? (
+                {project.demo && project.demo !== "" ? (
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {project.title}
+                  </a>
+                ) : project.repo && project.repo !== "" ? (
                   <a href={project.repo} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                     {project.title}
                   </a>

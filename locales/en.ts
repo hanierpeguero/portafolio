@@ -36,22 +36,28 @@ export const en = {
     title: "Featured Projects",
     list: [
       {
-        title: "School Web System",
-        tech: "Laravel + Filament",
-        description: "Academic and financial management for a school. Role management, payments, PDF reports, and delinquency control based on a SaaS architecture.",
-        tags: ["Laravel", "Filament", "SaaS", "Management"]
+        title: "Tixo",
+        tech: ".NET API REST",
+        description: "Collaborated as an internal backend developer (Techveris) on the implementation, maintenance, and documentation of REST API features for this project, as well as a simplified version of its business logic.",
+        tags: [".NET", "C#", "Backend", "API REST"],
+        repo: "",
+        demo: "https://tixo.do"
       },
       {
         title: "Artemis Banking",
         tech: ".NET 9",
         description: "Academic banking system designed for managing accounts, transactions, and business validations. Development focused on backend logic, layered architecture, and relational database persistence.",
-        tags: [".NET 9", "Backend", "Layered Architecture", "SQL"]
+        tags: [".NET 9", "Backend", "Layered Architecture", "SQL"],
+        repo: "https://github.com/hanierpeguero/ArtemisBanking",
+        demo: ""
       },
       {
         title: "eVote360",
         tech: ".NET 9",
         description: "Electronic voting platform developed as a technology project. Implementation of authentication, user management, and voting process control with a focus on security, data integrity, and scalability.",
-        tags: [".NET 9", "Security", "Authentication", "Scalability"]
+        tags: [".NET 9", "Security", "Authentication", "Scalability"],
+        repo: "https://github.com/hanierpeguero/eVote360",
+        demo: ""
       }
     ]
   },
