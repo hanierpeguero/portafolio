@@ -14,9 +14,9 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
     setStatus("submitting");
-    
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -25,7 +25,7 @@ export default function Contact() {
           Accept: "application/json"
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Reemplaza esto con tu Access Key de web3forms.com
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "",
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <section id="contact" className={`section ${styles.contactSection}`}>
       <div className="container">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -60,7 +60,7 @@ export default function Contact() {
         </motion.div>
 
         <div className={styles.contactContent}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -82,7 +82,7 @@ export default function Contact() {
                   <a href="mailto:hanierp80@gmail.com" className={styles.itemValue}>hanierp80@gmail.com</a>
                 </div>
               </div>
-              
+
               <div className={styles.contactItem}>
                 <div className={styles.iconWrapper}>
                   <Phone size={20} />
@@ -105,7 +105,7 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -127,19 +127,19 @@ export default function Contact() {
                 )}
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>{t.contact.name}</label>
-                  <input type="text" id="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className={styles.input} placeholder={t.contact.name} disabled={status === "submitting"} />
+                  <input type="text" id="name" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={styles.input} placeholder={t.contact.name} disabled={status === "submitting"} />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <label htmlFor="email" className={styles.label}>{t.contact.email}</label>
-                  <input type="email" id="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className={styles.input} placeholder={t.contact.email} disabled={status === "submitting"} />
+                  <input type="email" id="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={styles.input} placeholder={t.contact.email} disabled={status === "submitting"} />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <label htmlFor="message" className={styles.label}>{t.contact.message}</label>
-                  <textarea id="message" required rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className={styles.textarea} placeholder={t.contact.message} disabled={status === "submitting"}></textarea>
+                  <textarea id="message" required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={styles.textarea} placeholder={t.contact.message} disabled={status === "submitting"}></textarea>
                 </div>
-                
+
                 <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={status === "submitting"}>
                   {status === "submitting" ? (language === 'es' ? 'Enviando...' : 'Sending...') : (
                     <>{t.contact.send} <Send size={18} /></>
