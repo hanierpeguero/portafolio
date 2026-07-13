@@ -47,6 +47,18 @@
   color: var(--text-primary);
 }
 
+.schoolLink {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.schoolLink:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 12px var(--accent-glow);
+  text-decoration: underline;
+}
+
 .degree {
   color: var(--text-secondary);
   font-size: 0.95rem;

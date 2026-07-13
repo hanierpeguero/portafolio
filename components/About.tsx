@@ -46,7 +46,11 @@ export default function About() {
               <GraduationCap size={32} className={styles.accentIcon} />
             </div>
             <h3 className={styles.cardTitle}>{t.about.academicTitle}</h3>
-            <h4 className={styles.schoolName}>{t.about.academicSchool}</h4>
+            <h4 className={styles.schoolName}>
+              <a href="https://itla.edu.do/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
+                {t.about.academicSchool}
+              </a>
+            </h4>
             <p className={styles.degree}>{t.about.academicDegree}</p>
             <p className={styles.year}>{t.about.academicYear}</p>
             
@@ -67,7 +71,7 @@ export default function About() {
             </div>
             <h3 className={styles.cardTitle}>{t.about.workTitle}</h3>
             <h4 className={styles.schoolName}>
-              <a href="https://techveris.com.do/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="https://techveris.com.do/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
                 {t.about.workSchool}
               </a>
             </h4>
@@ -97,7 +101,11 @@ export default function About() {
             </div>
 
             <div>
-              <h4 className={styles.schoolName}>Instituto Tecnológico de las Américas (ITLA)</h4>
+              <h4 className={styles.schoolName}>
+                <a href="https://itla.edu.do/" target="_blank" rel="noopener noreferrer" className={styles.schoolLink}>
+                  Instituto Tecnológico de las Américas (ITLA)
+                </a>
+              </h4>
               <p className={styles.degree}>Programación Junior en Python</p>
             </div>
           </motion.div>
