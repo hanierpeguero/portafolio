@@ -98,6 +98,7 @@ export default function About() {
             <div style={{ marginBottom: "1.5rem" }}>
               <h4 className={styles.schoolName}>Cisco Networking Academy</h4>
               <p className={styles.degree}>CPA: Programming Essentials in C++</p>
+              <p className={styles.degree}>IT Essentials</p>
             </div>
 
             <div>
