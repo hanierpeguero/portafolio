@@ -37,7 +37,8 @@ const shapeVariants: Variants = {
 };
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const pdfSrc = language === "es" ? "/Cv_es.pdf" : "/Cv_en.pdf";
 
   return (
     <section className={styles.heroSection}>
@@ -74,7 +75,7 @@ export default function Hero() {
               </a>
             </div>
             <div className={styles.socialActions}>
-              <a href="/Cv.pdf" target="_blank" download="Hanier_Peguero_CV.pdf" className={`btn btn-outline ${styles.iconBtn}`} title="Download CV">
+              <a href={pdfSrc} target="_blank" download={`Hanier_Peguero_CV_${language.toUpperCase()}.pdf`} className={`btn btn-outline ${styles.iconBtn}`} title="Download CV">
                 <Download size={18} />
               </a>
               <a href="https://github.com/hanierpeguero" target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.iconBtn}`} title="GitHub">
