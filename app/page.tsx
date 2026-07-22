@@ -35,6 +35,7 @@ export default function Home() {
           </a>
         </div>
         <p>&copy; {new Date().getFullYear()} {t.footer.rights}</p>
+        <p style={{ fontSize: "0.85rem", marginTop: "0.5rem", opacity: 0.8 }}>{t.footer.builtWith}</p>
       </footer>
     </>
   );

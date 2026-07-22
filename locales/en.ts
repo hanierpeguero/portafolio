@@ -79,6 +79,7 @@ export const en = {
     send: "Send Message"
   },
   footer: {
-    rights: "Hanier Peguero. All rights reserved."
+    rights: "Hanier Peguero. All rights reserved.",
+    builtWith: "Built with Next.js + React"
   }
 };
