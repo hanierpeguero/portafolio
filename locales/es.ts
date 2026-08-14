@@ -10,7 +10,7 @@ export const es = {
     greeting: "Hola, soy",
     name: "Hanier Peguero",
     role: "Desarrollador de Software",
-    description: "Desarrollador de Software enfocado en construir sistemas escalables (Web, Móvil y Backend). Con sólidas bases de ingeniería y experiencia trabajando con arquitecturas modernas. Buscando unirme a un equipo dinámico donde pueda aportar valor inmediato, auditar y optimizar soluciones, y continuar mi crecimiento profesional.",
+    description: "Desarrollador de Software con experiencia práctica en el desarrollo de aplicaciones móviles, el uso de APIs REST, la gestión de datos y el diseño de soluciones escalables, con una sólida base en lógica de programación, arquitectura de software y sistemas de gestión. Me considero una persona autodidacta, analítica y con capacidad para resolver problemas, capaz de integrarme en equipos de desarrollo y participar en la implementación, el mantenimiento y la optimización de aplicaciones móviles. También tengo experiencia en el uso de herramientas de automatización y me adapto rápidamente a nuevas tecnologías según las necesidades del proyecto. Mi objetivo es seguir creciendo como desarrollador móvil y aportar buenas prácticas, calidad de código y soluciones eficientes que aporten valor al producto y al equipo.",
     viewWork: "Ver mi trabajo",
     viewResume: "Ver currículum"
   },

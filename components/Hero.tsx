@@ -38,7 +38,7 @@ const shapeVariants: Variants = {
 
 export default function Hero() {
   const { t, language } = useLanguage();
-  const pdfSrc = language === "es" ? "/Cv_es.pdf" : "/Cv_en.pdf";
+  const pdfSrc = "/Cv_es.pdf";
 
   return (
     <section className={styles.heroSection}>
