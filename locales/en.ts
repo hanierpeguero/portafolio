@@ -10,7 +10,7 @@ export const en = {
     greeting: "Hello, I'm",
     name: "Hanier Peguero",
     role: "Software Developer",
-    description: "Software Developer with hands-on experience in mobile application development, REST APIs, data management, and the design of scalable solutions, with a solid foundation in programming logic, software architecture, and management systems. I consider myself a self-taught, analytical person with problem-solving skills, capable of integrating into development teams and participating in the implementation, maintenance, and optimization of mobile applications. I also have experience using automation tools and quickly adapt to new technologies according to project needs. My goal is to continue growing as a mobile developer and contribute with best practices, code quality, and efficient solutions that add value to the product and the team.",
+    description: "Mobile Developer with experience in building applications, integrating REST APIs, and designing scalable solutions. I focus on writing clean code, applying best practices, and collaborating in agile teams to deliver high-value products.",
     viewWork: "View My Work",
     viewResume: "View Resume"
   },
