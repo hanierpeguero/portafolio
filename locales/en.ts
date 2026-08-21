@@ -10,7 +10,7 @@ export const en = {
     greeting: "Hello, I'm",
     name: "Hanier Peguero",
     role: "Software Developer",
-    description: "Mobile Developer with experience in building applications, integrating REST APIs, and designing scalable solutions. I focus on writing clean code, applying best practices, and collaborating in agile teams to deliver high-value products.",
+    description: "Fullstack Developer with experience building robust web solutions, spanning both modern frontend interfaces and scalable backend architectures. I also have hands-on experience developing cross-platform mobile applications with React Native. I focus on writing clean code, applying best practices, and delivering value in every project.",
     viewWork: "View My Work",
     viewResume: "View Resume"
   },

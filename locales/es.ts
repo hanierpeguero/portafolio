@@ -10,7 +10,7 @@ export const es = {
     greeting: "Hola, soy",
     name: "Hanier Peguero",
     role: "Desarrollador de Software",
-    description: "Desarrollador Mobile con experiencia en la creación de aplicaciones, integración de APIs REST y diseño de soluciones escalables. Me enfoco en escribir código limpio, aportar buenas prácticas y colaborar en equipos ágiles para entregar productos de alto valor.",
+    description: "Desarrollador Fullstack con experiencia construyendo soluciones web robustas, abarcando tanto el diseño de interfaces frontend como arquitecturas backend escalables. También cuento con experiencia desarrollando aplicaciones móviles multiplataforma con React Native. Me enfoco en escribir código limpio, aportar buenas prácticas y generar valor en cada proyecto.",
     viewWork: "Ver mi trabajo",
     viewResume: "Ver currículum"
   },
